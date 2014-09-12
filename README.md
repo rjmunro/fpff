@@ -63,10 +63,9 @@ The sample.wav is 3s clip.
 
 The $ presents the command prompt.
 
-    $ sox sample.wav -t raw -r 8192 -s -w -c 1 sample.dat avg resample -ql
+    $ sox sample.wav -t raw -r 8192 -e signed-integer -c 1 sample.dat
     $ java -jar dist/lib/Fpff-20070520.jar < sample.dat
     LLLfLuuuLLoDDEEELLkkkfLLLLDDDDDLLfcdkfffXuum0www
-
 
 Tested in Linux. Should work in any platform which as sox and Java available.
 
@@ -74,11 +73,11 @@ Tested in Linux. Should work in any platform which as sox and Java available.
 Transform and filter audio data with sox
 ----------------------------------------
 
-    sox audio.wav -t raw -r 8192 -s -w -c 1 audio.dat avg resample -ql
+    sox audio.wav -t raw -r 8192 -e signed-integer -c 1 audio.dat
 
- * Write data in raw 16bit (little endian) format.
- * Average stereo channels to single channel
- * Resample to 8192 Hz
+ * Write data in raw (-t raw) 16bit little endian (-e signed-integer) format.
+ * Average stereo channels to single channel (-c 1)
+ * Resample to 8192 Hz (-r 8192)
 
 
 Feed data to fingerprint utility
