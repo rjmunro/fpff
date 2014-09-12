@@ -18,7 +18,6 @@
  */
 package org.foo;
 
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
@@ -68,7 +67,7 @@ public class Util {
 		String configFile = System.getProperty(_CONF_FILE) == null ? _CONF_FILE
 				: System.getProperty(_CONF_FILE);
 		Properties p = new Properties();
-		p.load(new File(configFile));
+		p.load(new FileReader(configFile));
 		return p;
 	}
 
